@@ -143,6 +143,12 @@ export default function Home() {
               title="Computer Organization and Design MIPS Edition: The Hardware/Software Interface, 6th Edition"
               isbn="978-0128201091"
             />
+            <BookEntry
+              image="/course-assets/book3.png"
+              alt="Cover of Digital Design and Computer Architecture"
+              title="Digital Design and Computer Architecture, 2nd Edition"
+              isbn="978-0123944245"
+            />
           </article>
 
           <article className="course-article">

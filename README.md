@@ -18,6 +18,7 @@ site.js
 course-assets/
   book1.png
   book2.png
+  book3.png
 ```
 
 All links in `index.html` use relative paths so that the site works under the CSE course URL.

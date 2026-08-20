@@ -151,6 +151,7 @@ a:hover { color: var(--navy-light); }
   background: #fff;
 }
 .book-entry img { width: 150px; max-height: 195px; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; }
+.book-entry + .book-entry { margin-top: 16px; }
 .book-entry strong, .book-entry span { display: block; }
 .book-entry strong { color: var(--navy); font-size: 16px; }
 .book-entry span { margin-top: 8px; color: var(--muted); }
