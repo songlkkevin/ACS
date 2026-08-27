@@ -3,6 +3,7 @@
 This repository contains the source and published files for the COMP4611 Fall 2026 course website.
 
 - Official URL: <https://course.cse.ust.hk/comp4611/>
+- GitHub Pages custom domain: <https://acs.ising.cse.ust.hk/>
 - CSE server directory: `/course/comp4611/Web/2026F`
 
 The complete Git repository may be kept directly in the CSE server directory above. Apache, the CSE web server, reads `index.html` and its referenced files and sends their contents to students' browsers.
@@ -107,6 +108,23 @@ npm run dev
 ```
 
 The static files used by the CSE server remain `index.html`, `site.css`, `site.js`, and `course-assets/`.
+
+## GitHub Pages custom domain deployment
+
+This repository includes a `CNAME` file with:
+
+```text
+acs.ising.cse.ust.hk
+```
+
+After enabling GitHub Pages for this repository (from the branch/folder that contains `index.html`), configure:
+
+- **Custom domain**: `acs.ising.cse.ust.hk`
+- **Enforce HTTPS**: enabled (after certificate issuance completes)
+
+DNS should contain:
+
+- `acs.ising.cse.ust.hk` `CNAME` `songlkkevin.github.io`
 
 ## Content still requiring confirmation
 
