@@ -257,7 +257,7 @@ function Navigation() {
       </ul>
       <div className="canvas-link is-disabled" aria-label="Canvas is used for scores; link is not yet available">
         <span>Canvas</span>
-        <small>Scores only · link TBA</small>
+        <small>Link to be announced</small>
       </div>
     </nav>
   );
