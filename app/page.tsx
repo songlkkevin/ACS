@@ -80,17 +80,13 @@ export default function Home() {
           <div className="announcement-grid">
             <article className="announcement-card">
               <span className="card-kicker">Course materials</span>
-              <h3>Course introduction slides available</h3>
-              <p>
-                <a href="/course-assets/lecture-00-course-introduction.pptx">
-                  Download Lecture 0: Course Introduction and Basics
-                </a>.
-              </p>
+              <h3>Content coming soon</h3>
+              <p>Slides and supporting materials will appear in the Lecture Notes section.</p>
             </article>
             <article className="announcement-card">
-              <span className="card-kicker">Course logistics</span>
-              <h3>Use this website for course materials</h3>
-              <p>Slides and extra files will be published here. Canvas is used to release scores, not as the main course venue.</p>
+              <span className="card-kicker">Canvas</span>
+              <h3>Course page to be announced</h3>
+              <p>The Canvas link will be added after the Fall 2026 course page is available.</p>
             </article>
           </div>
         </section>
@@ -128,37 +124,26 @@ export default function Home() {
           </article>
 
           <article className="course-article">
-            <h3>Course Expectations</h3>
+            <h3>Academic Integrity</h3>
+            <p>All exercises submitted for grading must represent the results of each student&apos;s own independent efforts. Students may discuss methodologies with classmates, but must do the work independently.</p>
             <ul>
-              <li>The course does not teach a specific programming language; students are expected to learn or review required programming skills independently.</li>
-              <li>The course project is solely for learning and assessment. Students are responsible for designing and implementing their own systems.</li>
-              <li>The lectures focus on key concepts rather than every implementation detail. Independent study and specific, well-researched questions are encouraged.</li>
+              <li>Do not copy work from another student or person.</li>
+              <li>Do not look at another student&apos;s actual solution.</li>
+              <li>Do not share actual code or solution schemes with other students or people.</li>
+              <li>Do not post your work online.</li>
+              <li>Discussion is encouraged, but every student must complete the work independently.</li>
             </ul>
-          </article>
-
-          <article className="course-article">
-            <h3>Homework and Project Submissions</h3>
-            <ul>
-              <li>Double-check every submission, then download and test it after submitting.</li>
-              <li>Work that does not follow the specified format, including the required file name, may receive zero.</li>
-              <li>Work that does not function at all may receive zero.</li>
-              <li>Homework must be completed individually. Sharing answers or code, even one line, is cheating.</li>
-              <li>Asking someone else to complete homework is cheating. Students caught cheating will automatically fail the course.</li>
-            </ul>
-            <p>
-              All students must follow the <a href="https://registry.hkust.edu.hk/resource-library/academic-honor-code-and-academic-integrity" target="_blank" rel="noreferrer">University&apos;s Academic Honor Code</a>.
-            </p>
+            <p>Refer to the <a href="https://registry.hkust.edu.hk/resource-library/academic-honor-code-and-academic-integrity" target="_blank" rel="noreferrer">University&apos;s Honor Code</a> and the <a href="https://registry.hkust.edu.hk/resource-library/what-happens-if-you-are-caught-cheating" target="_blank" rel="noreferrer">University&apos;s penalties for cheating</a>.</p>
           </article>
         </section>
 
         <section id="grading-scheme" className="content-section">
           <SectionTitle eyebrow="Assessment" title="Grading Scheme" />
           <ResponsiveTable
-            headers={["Assessment Item", "Weight", "Focus"]}
+            headers={["ITEM", "PERCENTAGE"]}
             rows={[
-              ["Four individual homework assignments", "40%", "Individual understanding and implementation"],
-              ["Course project · Code repository", "30%", "Completeness and ease of use"],
-              ["Course project · Presentation", "30%", "Critical thinking, originality, and technical depth"],
+              ["Four individual homework assignments", "40%"],
+              ["Course project", "60%"],
             ]}
           />
           <p><strong>There are no exams in this course.</strong> Students are expected to devote substantial time and effort to the course project.</p>
@@ -174,11 +159,10 @@ export default function Home() {
               ["Week 3", "TBA", "TBA", "TBA"],
             ]}
           />
-          <p className="section-footnote">Additional weeks will be added as the teaching schedule is finalized.</p>
         </section>
 
         <section id="homework" className="content-section">
-          <SectionTitle eyebrow="Individual work · 40%" title="Homework" />
+          <SectionTitle eyebrow="Individual work" title="Homework" />
           <ResponsiveTable
             headers={["Homework", "Released", "Due", "Materials"]}
             rows={[
@@ -188,20 +172,17 @@ export default function Home() {
               ["Homework 4", "TBA", "TBA", "—"],
             ]}
           />
-          <p className="section-footnote">All four homework assignments are individual work.</p>
         </section>
 
         <section id="project-assignments" className="content-section">
-          <SectionTitle eyebrow="Applied work · 60%" title="Course Project" />
-          <p>The project asks you to design and implement your own system and apply course knowledge to strengthen its originality and technical depth.</p>
+          <SectionTitle eyebrow="Applied work" title="Course Project" />
           <ResponsiveTable
             headers={["Component", "Weight", "Assessment Focus"]}
             rows={[
-              ["Code repository", "30%", "Completeness and ease of use"],
-              ["Presentation", "30%", "Critical thinking behind the project"],
+              ["Code repository", "50%", "Completeness and ease of use"],
+              ["Presentation", "50%", "Critical thinking behind the project"],
             ]}
           />
-          <p className="section-footnote">Project milestones, submission dates, and detailed specifications will be announced.</p>
         </section>
 
         <section id="instructors" className="content-section">
@@ -212,10 +193,9 @@ export default function Home() {
               <div>
                 <span className="person-role">Instructor</span>
                 <h3>Prof. Kai Chen</h3>
-                <p><a href="mailto:kaichen@cse.ust.hk">kaichen@cse.ust.hk</a> · preferred contact</p>
-                <p>Office: CYT-3006 (Lift 35/36) · Office hour: by appointment</p>
+                <p><a href="mailto:kaichen@cse.ust.hk">kaichen@cse.ust.hk</a></p>
+                <p>Office: CYT-3006 (Lift 35/36) · Office hours: by appointment</p>
                 <p><a href="https://www.cse.ust.hk/~kaichen/" target="_blank" rel="noreferrer">Personal website</a> · <a href="https://ising.cse.ust.hk/" target="_blank" rel="noreferrer">iSING Lab</a></p>
-                <p>Research and teaching: computer networks, operating systems, computer architecture, data center and high-performance networking, and AI-centric network systems.</p>
               </div>
             </article>
           </div>
