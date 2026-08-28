@@ -1,23 +1,17 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 
 const navigation = [
   ["announcements", "Announcements"],
   ["course-information", "Course Information"],
-  ["rubrics", "Rubrics"],
-  ["lecture-notes", "Lecture Notes and Summary"],
-  ["lecture-videos", "Lecture Videos"],
-  ["tutorials", "Tutorials"],
+  ["grading-scheme", "Grading Scheme"],
+  ["lecture-notes", "Lecture Notes"],
   ["homework", "Homework"],
-  ["past-exams", "Past Exams"],
-  ["project-assignments", "Project Assignments"],
-  ["instructors", "Instructors"],
+  ["project-assignments", "Course Project"],
+  ["instructors", "Instructor"],
   ["teaching-assistants", "Teaching Assistants"],
-  ["references", "References"],
 ] as const;
-
-const placeholderRows = [1, 2, 3];
 
 export default function Home() {
   useEffect(() => {
@@ -49,9 +43,8 @@ export default function Home() {
     <div className="course-shell">
       <aside className="sidebar">
         <div className="sidebar-inner">
-          <a className="course-brand" href="#announcements" aria-label="COMP4611 home">
-            <span className="course-code">COMP4611</span>
-            <span className="course-title">Design and Analysis of Computer Architectures</span>
+          <a className="course-brand" href="#announcements" aria-label="Advanced AI Computing and Systems home">
+            <span className="course-title">Advanced AI Computing and Systems</span>
             <span className="semester">Fall 2026</span>
           </a>
 
@@ -65,7 +58,7 @@ export default function Home() {
 
           <div className="sidebar-note">
             <span className="status-dot" aria-hidden="true" />
-            Website preparation in progress
+            Course materials available
           </div>
         </div>
       </aside>
@@ -76,24 +69,28 @@ export default function Home() {
           <div className="announcement-featured">
             <div>
               <span className="announcement-label">Welcome</span>
-              <h3>COMP4611 · Fall 2026</h3>
+              <h3>Advanced AI Computing and Systems · Fall 2026</h3>
               <p>
-                The course website is being prepared. Lecture materials, assessment details,
-                and important dates will be published here as they are confirmed.
+                This postgraduate course explores the architectures, networks, and distributed
+                systems behind modern AI computing and large language model infrastructure.
               </p>
             </div>
-            <time dateTime="2026-08-10">10 Aug 2026</time>
+            <time dateTime="2026-08-28">28 Aug 2026</time>
           </div>
           <div className="announcement-grid">
             <article className="announcement-card">
               <span className="card-kicker">Course materials</span>
-              <h3>Content coming soon</h3>
-              <p>Slides and supporting materials will appear in the Lecture Notes section.</p>
+              <h3>Course introduction slides available</h3>
+              <p>
+                <a href="/course-assets/lecture-00-course-introduction.pptx">
+                  Download Lecture 0: Course Introduction and Basics
+                </a>.
+              </p>
             </article>
             <article className="announcement-card">
-              <span className="card-kicker">Canvas</span>
-              <h3>Course page to be announced</h3>
-              <p>The Canvas link will be added after the Fall 2026 course page is available.</p>
+              <span className="card-kicker">Course logistics</span>
+              <h3>Use this website for course materials</h3>
+              <p>Slides and extra files will be published here. Canvas is used to release scores, not as the main course venue.</p>
             </article>
           </div>
         </section>
@@ -101,195 +98,144 @@ export default function Home() {
         <section id="course-information" className="content-section">
           <SectionTitle eyebrow="About the course" title="Course Information" />
           <article className="course-article">
-            <h3>Course Descriptions</h3>
-            <p>The course vector is <strong>[3-0-1:3]</strong>. The course consists of the following teaching activities in each week:</p>
-            <ul>
-              <li>3 hours of lecture session</li>
-              <li>1 hour of tutorial</li>
-            </ul>
-          </article>
-
-          <article className="course-article">
-            <h3>Prerequisites</h3>
-            <p>COMP 2611 or ELEC 2300 or ELEC 2350</p>
-          </article>
-
-          <article className="course-article">
-            <h3>Course Outcomes</h3>
-            <p>On successful completion of this course, students are expected to be able to:</p>
-            <ul className="outcome-list">
-              <li>Assess the intricate nuances of designing computer architectures with the aim of improving performance, balancing performance, cost and power consumption.</li>
-              <li>Analyze various techniques at different levels of computer architecture design that can be used effectively to meet performance goals.</li>
-              <li>Critically evaluate computer architectures and systems.</li>
-              <li>Select and apply various performance evaluation techniques and tools.</li>
-            </ul>
-          </article>
-
-          <article className="course-article">
-            <h3>Textbook</h3>
-            <BookEntry
-              image="/course-assets/book1.png"
-              alt="Cover of Computer Architecture: A Quantitative Approach"
-              title="Computer Architecture: A Quantitative Approach (5th or 6th Edition)"
-              isbn="978-0128119051"
-            />
-          </article>
-
-          <article className="course-article">
-            <h3>Reference Books</h3>
-            <BookEntry
-              image="/course-assets/book2.png"
-              alt="Cover of Computer Organization and Design MIPS Edition"
-              title="Computer Organization and Design MIPS Edition: The Hardware/Software Interface, 6th Edition"
-              isbn="978-0128201091"
-            />
-            <BookEntry
-              image="/course-assets/book3.png"
-              alt="Cover of Digital Design and Computer Architecture"
-              title="Digital Design and Computer Architecture, 2nd Edition"
-              isbn="978-0123944245"
-            />
-          </article>
-
-          <article className="course-article">
-            <h3>Lecture Schedule</h3>
-            <BlankSchedule headers={["Section", "Instructor", "Time", "Venue"]} />
-          </article>
-
-          <article className="course-article">
-            <h3>Tutorial Schedule</h3>
-            <BlankSchedule headers={["Section", "Instructor", "Time", "Venue"]} />
-          </article>
-
-          <article className="course-article">
-            <h3>Academic Integrity</h3>
-            <p>All exercises submitted for grading must represent the results of each student&apos;s own independent efforts. Students may discuss methodologies with classmates, but must do the work independently.</p>
-            <ul>
-              <li>Do not copy work from another student or person.</li>
-              <li>Do not look at another student&apos;s actual solution.</li>
-              <li>Do not share actual code or solution schemes with other students or people.</li>
-              <li>Do not post your work online.</li>
-              <li>Discussion is encouraged, but every student must complete the work independently.</li>
-            </ul>
+            <h3>Course Overview</h3>
             <p>
-              Refer to the <a href="https://registry.hkust.edu.hk/resource-library/academic-honor-code-and-academic-integrity" target="_blank" rel="noreferrer">University&apos;s Honor Code</a> and the <a href="https://registry.hkust.edu.hk/resource-library/what-happens-if-you-are-caught-cheating" target="_blank" rel="noreferrer">University&apos;s penalties for cheating</a>.
+              This 5000-level postgraduate course introduces state-of-the-art computer
+              architectures, networks, and distributed systems for AI computing. It connects
+              hardware and systems evolution with large language model infrastructure, then
+              brings the ideas together in an end-to-end course project.
             </p>
           </article>
 
           <article className="course-article">
-            <h3>Grading Scheme</h3>
-            <BlankSchedule headers={["Assessment Item", "Contribution (%)"]} />
+            <h3>Prerequisites</h3>
+            <ul>
+              <li>Operating Systems, Design and Analysis of Computer Architectures, or Computer and Communication Networks</li>
+              <li>Basic C++ programming knowledge</li>
+              <li>Basic machine learning knowledge</li>
+              <li>A passion for understanding computer architectures, networks, and LLM systems in depth</li>
+            </ul>
+          </article>
+
+          <article className="course-article">
+            <h3>Major Learning Goals</h3>
+            <ul className="outcome-list">
+              <li>Understand widely used and state-of-the-art techniques in AI infrastructure.</li>
+              <li>Design and build an end-to-end infrastructure stack for large language models.</li>
+              <li>Develop practical skills in multithreaded programming and AI algorithms that are valuable for research and industry careers.</li>
+              <li>Build intuition for system design choices, trade-offs, and the many interconnected factors involved in becoming a strong system architect.</li>
+            </ul>
+          </article>
+
+          <article className="course-article">
+            <h3>Course Expectations</h3>
+            <ul>
+              <li>The course does not teach a specific programming language; students are expected to learn or review required programming skills independently.</li>
+              <li>The course project is solely for learning and assessment. Students are responsible for designing and implementing their own systems.</li>
+              <li>The lectures focus on key concepts rather than every implementation detail. Independent study and specific, well-researched questions are encouraged.</li>
+            </ul>
+          </article>
+
+          <article className="course-article">
+            <h3>Homework and Project Submissions</h3>
+            <ul>
+              <li>Double-check every submission, then download and test it after submitting.</li>
+              <li>Work that does not follow the specified format, including the required file name, may receive zero.</li>
+              <li>Work that does not function at all may receive zero.</li>
+              <li>Homework must be completed individually. Sharing answers or code, even one line, is cheating.</li>
+              <li>Asking someone else to complete homework is cheating. Students caught cheating will automatically fail the course.</li>
+            </ul>
+            <p>
+              All students must follow the <a href="https://registry.hkust.edu.hk/resource-library/academic-honor-code-and-academic-integrity" target="_blank" rel="noreferrer">University&apos;s Academic Honor Code</a>.
+            </p>
           </article>
         </section>
 
-        <section id="rubrics" className="content-section">
-          <SectionTitle eyebrow="Assessment" title="Rubrics" />
+        <section id="grading-scheme" className="content-section">
+          <SectionTitle eyebrow="Assessment" title="Grading Scheme" />
           <ResponsiveTable
-            headers={["Component", "Weight", "Notes"]}
+            headers={["Assessment Item", "Weight", "Focus"]}
             rows={[
-              ["Homework", "TBA", "Details will be announced"],
-              ["Project assignments", "TBA", "Details will be announced"],
-              ["Midterm examination", "TBA", "Date and coverage to be announced"],
-              ["Final examination", "TBA", "Date and coverage to be announced"],
+              ["Four individual homework assignments", "40%", "Individual understanding and implementation"],
+              ["Course project · Code repository", "30%", "Completeness and ease of use"],
+              ["Course project · Presentation", "30%", "Critical thinking, originality, and technical depth"],
             ]}
           />
+          <p><strong>There are no exams in this course.</strong> Students are expected to devote substantial time and effort to the course project.</p>
         </section>
 
         <section id="lecture-notes" className="content-section">
-          <SectionTitle eyebrow="Weekly materials" title="Lecture Notes and Summary" />
+          <SectionTitle eyebrow="Weekly materials" title="Lecture Notes" />
           <ResponsiveTable
             headers={["Week", "Topic", "Slides", "Summary"]}
-            rows={placeholderRows.map((week) => [
-              `Week ${week}`,
-              "To be announced",
-              "—",
-              "—",
-            ])}
+            rows={[
+              ["Week 1", "TBA", "TBA", "TBA"],
+              ["Week 2", "TBA", "TBA", "TBA"],
+              ["Week 3", "TBA", "TBA", "TBA"],
+            ]}
           />
           <p className="section-footnote">Additional weeks will be added as the teaching schedule is finalized.</p>
         </section>
 
-        <section id="lecture-videos" className="content-section">
-          <SectionTitle eyebrow="Recordings" title="Lecture Videos" />
-          <EmptyState
-            label="Video access"
-            title="Lecture video information will be announced"
-            body="If recordings are provided, the course team will publish the access link here or on Canvas."
-          />
-        </section>
-
-        <section id="tutorials" className="content-section">
-          <SectionTitle eyebrow="Supporting sessions" title="Tutorials" />
-          <ResponsiveTable
-            headers={["Tutorial", "Topic", "Materials", "Date"]}
-            rows={[["Tutorial 1", "To be announced", "—", "TBA"]]}
-          />
-        </section>
-
         <section id="homework" className="content-section">
-          <SectionTitle eyebrow="Individual work" title="Homework" />
+          <SectionTitle eyebrow="Individual work · 40%" title="Homework" />
           <ResponsiveTable
             headers={["Homework", "Released", "Due", "Materials"]}
             rows={[
               ["Homework 1", "TBA", "TBA", "—"],
               ["Homework 2", "TBA", "TBA", "—"],
+              ["Homework 3", "TBA", "TBA", "—"],
+              ["Homework 4", "TBA", "TBA", "—"],
             ]}
           />
-        </section>
-
-        <section id="past-exams" className="content-section">
-          <SectionTitle eyebrow="Revision" title="Past Exams" />
-          <EmptyState
-            label="Exam materials"
-            title="Past examination materials will be announced"
-            body="Availability and access rules will be confirmed by the course instructor."
-          />
+          <p className="section-footnote">All four homework assignments are individual work.</p>
         </section>
 
         <section id="project-assignments" className="content-section">
-          <SectionTitle eyebrow="Applied work" title="Project Assignments" />
+          <SectionTitle eyebrow="Applied work · 60%" title="Course Project" />
+          <p>The project asks you to design and implement your own system and apply course knowledge to strengthen its originality and technical depth.</p>
           <ResponsiveTable
-            headers={["Assignment", "Released", "Due", "Specification"]}
+            headers={["Component", "Weight", "Assessment Focus"]}
             rows={[
-              ["Project Assignment 1", "TBA", "TBA", "—"],
-              ["Project Assignment 2", "TBA", "TBA", "—"],
+              ["Code repository", "30%", "Completeness and ease of use"],
+              ["Presentation", "30%", "Critical thinking behind the project"],
             ]}
           />
+          <p className="section-footnote">Project milestones, submission dates, and detailed specifications will be announced.</p>
         </section>
 
         <section id="instructors" className="content-section">
-          <SectionTitle eyebrow="Course team" title="Instructors" />
+          <SectionTitle eyebrow="Course team" title="Instructor" />
           <div className="people-grid">
-            <article className="person-card">
-              <div className="person-avatar">KC</div>
+            <article className="person-card instructor-card">
+              <img className="person-photo" src="/course-assets/kai-chen.jpg" alt="Prof. Kai Chen" />
               <div>
                 <span className="person-role">Instructor</span>
                 <h3>Prof. Kai Chen</h3>
-                <a href="mailto:kaichen@cse.ust.hk">kaichen@cse.ust.hk</a>
-                <p>Office hour: by appointment</p>
+                <p><a href="mailto:kaichen@cse.ust.hk">kaichen@cse.ust.hk</a> · preferred contact</p>
+                <p>Office: CYT-3006 (Lift 35/36) · Office hour: by appointment</p>
+                <p><a href="https://www.cse.ust.hk/~kaichen/" target="_blank" rel="noreferrer">Personal website</a> · <a href="https://ising.cse.ust.hk/" target="_blank" rel="noreferrer">iSING Lab</a></p>
+                <p>Research and teaching: computer networks, operating systems, computer architecture, data center and high-performance networking, and AI-centric network systems.</p>
               </div>
             </article>
           </div>
         </section>
 
-        <section id="teaching-assistants" className="content-section">
+        <section id="teaching-assistants" className="content-section last-section">
           <SectionTitle eyebrow="Course team" title="Teaching Assistants" />
-          <div className="empty-roster">
-            <p>Teaching assistant details and responsibilities will be announced.</p>
+          <p>Different teaching assistants are responsible for different aspects of the course. Contact the relevant TA when responsibilities are announced.</p>
+          <div className="people-grid">
+            <Person initials="HX" name="Huang Xinyang" email="xhuangci@connect.ust.hk" />
+            <Person initials="SY" name="Sun Yijun" />
+            <Person initials="ZD" name="Zhang Daoping" />
+            <Person initials="CZ" name="Chen Zhuo" />
+            <Person initials="XS" name="Xie Songrun" />
+            <Person initials="YX" name="Yang Xinyu" email="xinyu.yang@connect.ust.hk" />
           </div>
         </section>
 
-        <section id="references" className="content-section last-section">
-          <SectionTitle eyebrow="Reading" title="References" />
-          <EmptyState
-            label="Reference materials"
-            title="Textbook and reading list to be announced"
-            body="Confirmed references will be listed here with links or access instructions."
-          />
-        </section>
-
         <footer>
-          <span>COMP4611 · Fall 2026</span>
+          <span>Advanced AI Computing and Systems · Fall 2026</span>
           <span>HKUST Department of Computer Science and Engineering</span>
         </footer>
       </main>
@@ -309,9 +255,9 @@ function Navigation() {
           </li>
         ))}
       </ul>
-      <div className="canvas-link is-disabled" aria-label="Canvas link is not yet available">
+      <div className="canvas-link is-disabled" aria-label="Canvas is used for scores; link is not yet available">
         <span>Canvas</span>
-        <small>Link to be announced</small>
+        <small>Scores only · link TBA</small>
       </div>
     </nav>
   );
@@ -326,30 +272,7 @@ function SectionTitle({ eyebrow, title }: { eyebrow: string; title: string }) {
   );
 }
 
-function BookEntry({ image, alt, title, isbn }: { image: string; alt: string; title: string; isbn: string }) {
-  return (
-    <div className="book-entry">
-      <img src={image} alt={alt} />
-      <div>
-        <strong>{title}</strong>
-        <span>ISBN: {isbn}</span>
-      </div>
-    </div>
-  );
-}
-
-function BlankSchedule({ headers }: { headers: string[] }) {
-  return (
-    <div className="table-wrap blank-table">
-      <table>
-        <thead><tr>{headers.map((header) => <th key={header}>{header}</th>)}</tr></thead>
-        <tbody><tr><td colSpan={headers.length} aria-label="Information to be confirmed" /></tr></tbody>
-      </table>
-    </div>
-  );
-}
-
-function ResponsiveTable({ headers, rows }: { headers: string[]; rows: string[][] }) {
+function ResponsiveTable({ headers, rows }: { headers: string[]; rows: ReactNode[][] }) {
   return (
     <div className="table-wrap">
       <table>
@@ -358,8 +281,8 @@ function ResponsiveTable({ headers, rows }: { headers: string[]; rows: string[][
         </thead>
         <tbody>
           {rows.map((row, rowIndex) => (
-            <tr key={`${row[0]}-${rowIndex}`}>
-              {row.map((cell, cellIndex) => <td key={`${cell}-${cellIndex}`}>{cell}</td>)}
+            <tr key={rowIndex}>
+              {row.map((cell, cellIndex) => <td key={cellIndex}>{cell}</td>)}
             </tr>
           ))}
         </tbody>
@@ -368,12 +291,15 @@ function ResponsiveTable({ headers, rows }: { headers: string[]; rows: string[][
   );
 }
 
-function EmptyState({ label, title, body }: { label: string; title: string; body: string }) {
+function Person({ initials, name, email }: { initials: string; name: string; email?: string }) {
   return (
-    <div className="empty-state">
-      <span>{label}</span>
-      <h3>{title}</h3>
-      <p>{body}</p>
-    </div>
+    <article className="person-card">
+      <div className="person-avatar">{initials}</div>
+      <div>
+        <span className="person-role">Teaching Assistant</span>
+        <h3>{name}</h3>
+        {email ? <a href={`mailto:${email}`}>{email}</a> : null}
+      </div>
+    </article>
   );
 }

@@ -13,8 +13,8 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "COMP4611 · Design and Analysis of Computer Architectures",
-  description: "Fall 2026 course website for HKUST COMP4611.",
+  title: "Advanced AI Computing and Systems",
+  description: "Fall 2026 course website for HKUST Advanced AI Computing and Systems.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
