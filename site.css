@@ -182,6 +182,7 @@ tbody tr:hover { background: #fafcfc; }
 .instructor-card { grid-column: 1 / -1; align-items: flex-start; }
 .person-photo { flex: 0 0 112px; width: 112px; height: 140px; object-fit: cover; border: 1px solid var(--line); border-radius: 10px; }
 .person-avatar { display: grid; place-items: center; flex: 0 0 58px; width: 58px; height: 58px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-family: "Source Serif 4", Georgia, serif; font-size: 20px; font-weight: 750; }
+.person-photo-avatar { object-fit: cover; border: 1px solid var(--line); }
 .person-role { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .person-card h3 { margin: 2px 0; color: var(--navy); font-size: 19px; }
 .person-card p { margin: 5px 0 0; color: var(--muted); }

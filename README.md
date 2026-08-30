@@ -20,11 +20,11 @@ course-assets/
   book1.png
   book2.png
   book3.png
+  kai-chen.jpg
+  <teaching-assistant-photos>.jpg
 ```
 
 All links in `index.html` use relative paths so that the site works under the CSE course URL.
-
-The other repository files, including `app/`, `tests/`, `package.json`, and build configuration files, are used for local development and are not required by Apache.
 
 ## File permissions on the CSE server
 
@@ -97,17 +97,6 @@ curl -sS https://course.cse.ust.hk/comp4611/ | head -n 10
 ```
 
 A successful response should begin with the HTML document declaration and the COMP4611 page content. A `403 Forbidden` response usually indicates that Apache cannot read `index.html` or enter one of the required directories.
-
-## Local development
-
-Install the development dependencies and start the local preview:
-
-```bash
-npm install
-npm run dev
-```
-
-The static files used by the CSE server remain `index.html`, `site.css`, `site.js`, and `course-assets/`.
 
 ## GitHub Pages custom domain deployment
 
