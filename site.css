@@ -78,6 +78,8 @@ a:hover { color: var(--navy-light); }
 .canvas-link { margin-top: 20px; padding: 13px 14px; border-top: 1px solid #cfd6d8; border-bottom: 1px solid #cfd6d8; }
 .canvas-link span, .canvas-link small { display: block; }
 .canvas-link span { font-weight: 750; color: var(--navy); }
+.canvas-link a { color: #46525d; font-size: 13px; font-weight: 570; text-decoration: none; }
+.canvas-link a:hover { color: var(--navy); }
 .canvas-link small { color: var(--muted); font-size: 11px; }
 .canvas-link.is-disabled { opacity: .72; }
 
